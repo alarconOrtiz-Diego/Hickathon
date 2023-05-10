@@ -1,5 +1,5 @@
 const express = require('express');
-const usersRoutes = require('./src/routes')
+const dbRoutes = require('./src/routes')
 
 const app = express();
 const port = 3000;
@@ -10,6 +10,6 @@ app.get("/", (req, res) => {
 	res.send("Hello World!");
 })
 
-app.use('/api/v1/users', usersRoutes);
+app.use('/api/v1', dbRoutes);
 
 app.listen(port, () => console.log(`app listening on port ${port}`));
